@@ -3,7 +3,7 @@ name = "RustyCards"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-description: "A terminal app for custom quizzes written in Rust"
+description = "A terminal app for custom quizzes written in Rust"
 
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
