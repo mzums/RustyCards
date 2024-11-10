@@ -3,9 +3,9 @@ use rand::seq::SliceRandom;
 use rand::thread_rng;
 use serde::Deserialize;
 use std::fs::File;
-use std::io::Read;
+use std::io::{self, Read};
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Debug, Clone)]
 struct Question {
     question: String,
     options: Vec<String>,
@@ -21,42 +21,74 @@ fn get_matches() -> ArgMatches {
             Arg::new("file")
                 .short('f')
                 .long("file")
-                .value_parser(clap::value_parser!(String))
-                .default_value("data/questions.json"),
+                .default_value("data/questions.json")
+                .help("The file containing questions in JSON format"),
         )
         .arg(
             Arg::new("shuffle")
                 .short('s')
                 .long("shuffle")
-                .help("random order")
+                .help("Randomize the order of questions")
                 .action(clap::ArgAction::SetTrue),
         )
         .get_matches()
 }
 
-fn get_questions(matches: &ArgMatches) -> Vec<Question> {
+fn get_questions(matches: &ArgMatches) -> Result<Vec<Question>, Box<dyn std::error::Error>> {
     let file_path = matches.get_one::<String>("file").unwrap();
-    let mut file = File::open(file_path).expect("Failed to open the file");
+    let mut file = File::open(file_path)?;
     let mut contents = String::new();
-    file.read_to_string(&mut contents).expect("An error while reading the file");
-    serde_json::from_str(&contents).expect("Failed to parse JSON")
+    file.read_to_string(&mut contents)?;
+    let questions: Vec<Question> = serde_json::from_str(&contents)?;
+    Ok(questions)
+}
+
+fn display_question(question: &Question, idx: usize) {
+    println!("Question {}: {}", idx + 1, question.question);
+    for (j, option) in question.options.iter().enumerate() {
+        println!(" {}) {}", j + 1, option);
+    }
+}
+
+fn handle_input(answer: &str, score: i32) -> i32 {
+    let mut guess = String::new();
+    io::stdin()
+        .read_line(&mut guess)
+        .expect("Please enter a valid answer");
+    
+    let guess = guess.trim();
+
+    if guess == answer {
+        println!("Correct!\n");
+        score + 1
+    } else {
+        println!("The correct answer was {}\n", answer);
+        score
+    }
 }
 
 fn main() {
+    let mut score = 0;
     let matches = get_matches();
 
-    let mut questions = get_questions(&matches);
+    let questions = match get_questions(&matches) {
+        Ok(questions) => questions,
+        Err(err) => {
+            eprintln!("Error loading questions: {}", err);
+            return;
+        }
+    };
     
+    let mut rng = thread_rng();
+
+    let mut shuffled_questions = questions.clone();
     if matches.get_flag("shuffle") {
-        let mut rng = thread_rng();
-        questions.shuffle(&mut rng);
+        shuffled_questions.shuffle(&mut rng);
     }
 
-    for (i, question) in questions.iter().enumerate() {
-        println!("Question {}: {}", i + 1, question.question);
-        for (j, option) in question.options.iter().enumerate() {
-            println!(" {}) {}", j+1, option);
-        }
-        println!();
+    for (i, question) in shuffled_questions.iter_mut().enumerate() {
+        display_question(&question, i);
+        score = handle_input(&question.answer, score);
     }
+    println!("Your score was {score}/{}", questions.len());
 }
