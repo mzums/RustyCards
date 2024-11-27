@@ -4,12 +4,13 @@ use rand::thread_rng;
 use serde::Deserialize;
 use std::fs::File;
 use std::io::{self, Read};
+use colored::Colorize;
 
 #[derive(Deserialize, Debug, Clone)]
 struct Question {
     question: String,
     options: Vec<String>,
-    answer: String,
+    answers: Vec<i32>,
 }
 
 fn get_matches() -> ArgMatches {
@@ -50,24 +51,38 @@ fn display_question(question: &Question, idx: usize) {
     }
 }
 
-fn handle_input(answer: &str, score: i32) -> i32 {
+fn handle_input(answers: &[i32], score: i32) -> i32 {
     let mut guess = String::new();
+    println!("Enter your answer (separate with spaces if there are many possible)");
+    
     io::stdin()
         .read_line(&mut guess)
-        .expect("Please enter a valid answer");
-    
-    let guess = guess.trim();
+        .expect("Failed to read input");
 
-    if guess == answer {
+    let guesses: Vec<i32> = guess
+        .trim()
+        .split_whitespace()
+        .filter_map(|s| s.parse::<i32>().ok())
+        .collect();
+
+    if guesses.is_empty() {
+        println!("Invalid input. Please enter numbers separated by spaces.");
+        return score;
+    }
+
+    if guesses.len() == answers.len() && guesses.iter().all(|g| answers.contains(g)) {
         println!("Correct!\n");
         score + 1
     } else {
-        println!("The correct answer was {}\n", answer);
+        println!("The correct answers were: {:?}\n", answers);
         score
     }
 }
 
 fn main() {
+    let title = "RustyCards!\n".bold().yellow();
+    println!("{title}");
+
     let mut score = 0;
     let matches = get_matches();
 
@@ -88,7 +103,7 @@ fn main() {
 
     for (i, question) in shuffled_questions.iter_mut().enumerate() {
         display_question(&question, i);
-        score = handle_input(&question.answer, score);
+        score = handle_input(&question.answers, score);
     }
     println!("Your score was {score}/{}", questions.len());
 }

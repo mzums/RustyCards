@@ -1,0 +1,202 @@
+[
+  {
+    "question": "the treatment and instruction received by a child from its parents throughout its childhood.",
+    "options": ["upbringing", "Berlin", "Rome", "Madrid"],
+    "answers": [1]
+  },
+  {
+    "question": "money received, especially on a regular basis, for work or through investments.",
+    "options": ["income", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "the way a thing turns out; a consequence.",
+    "options": ["outcome", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a heavy fall of rain",
+    "options": ["downpour", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a taste remaining in the mouth after eating or drinking something.",
+    "options": ["aftertaste", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "an exclamation or shout.",
+    "options": ["outcry", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a loss of power, prosperity, or status",
+    "options": ["downfall", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "an effect that follows after the primary action of something.",
+    "options": ["after-effect", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a person's point of view or general attitude od life, a view.",
+    "options": ["outlook", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "what is put in, taken in, or operated on by any process or system.",
+    "options": ["input", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "make something more modern or up to date.",
+    "options": ["update", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a sudden release of strong emotion.",
+    "options": ["outburst", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a smaller earthquake following the main shock of a large earthquake.",
+    "options": ["aftershock", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "an amount of money spent on something.",
+    "options": ["outlay", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a sudden occurrence of something unwelcome, such as a war or disease.",
+    "options": ["outbreak", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "the action of taking up or making use of something that is avaible.",
+    "options": ["uptake", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a decline in economic, business, or other activity.",
+    "options": ["downturn", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "the process of keeping something in good condition.",
+    "options": ["upkeep", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "an amount of food, air, or another substance taken into the body.",
+    "options": ["intake", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "cheat someone, especially financially.",
+    "options": ["rip-off", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a withdrawal from a position taken up in argument or negotiation.",
+    "options": ["climbdown", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a return by a well-known person, especially an entertainer or sports player, to the activity in which they have formerly been successful.",
+    "options": ["comeback", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a sudden, dramatic, and important discovery or development.",
+    "options": ["breakthrough", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "the separation or breaking up of something into several pieces or sections, the end of a realtionship.",
+    "options": ["break-up", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a person or thing that causes someone to feel bored.",
+    "options": ["turn-off", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a confusion of one thing with another, or a misunderstanding or mistake that results in confusion.",
+    "options": ["mix-up", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "the way in which something, especially an organization or equipment, is organized, planned, or arranged.",
+    "options": ["set-up", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a disappointment.",
+    "options": ["let-down", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a vehicle or other object that is too badly damaged to be repaired.",
+    "options": ["write-off", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "help or support.",
+    "options": ["backup", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a thing that makes an inadvertent revelation.",
+    "options": ["giveaway", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a situation that causes delay.",
+    "options": ["hold-up", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "the number of people attending or taking part in an event.",
+    "options": ["turnout", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a complete transformation of the appearance of someone or something.",
+    "options": ["makeover", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a reversal or check in progress.",
+    "options": ["setback", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a failure of a relationship or system.",
+    "options": ["breakdown", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a newspaper article giving an opinion or review of an event, performance or product.",
+    "options": ["write-up", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "permission to proceed.",
+    "options": ["go-ahead", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "readiness for duty or immediate deployment.",
+    "options": ["standby", "4", "5", "6"],
+    "answers": [1]
+  },
+  {
+    "question": "a disastrous collapse or breakdown.",
+    "options": ["meltdown", "4", "5", "6"],
+    "answers": [1]
+  }
+]

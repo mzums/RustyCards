@@ -2,11 +2,16 @@
   {
     "question": "What is the capital of France?",
     "options": ["Paris", "Berlin", "Rome", "Madrid"],
-    "answer": "1"
+    "answers": [1]
   },
   {
     "question": "What is 2 + 2?",
     "options": ["3", "4", "5", "6"],
-    "answer": "2"
+    "answers": [2]
+  },
+  {
+    "question": "Which countries are in Europe?",
+    "options": ["Poland", "UK", "USA", "Argentina"],
+    "answers": [1, 2]
   }
 ]

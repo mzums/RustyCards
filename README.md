@@ -7,11 +7,12 @@
 - Create your own JSON file with custom questions.
 - Shuffle questions for randomness.
 - Track points for each quiz session.
+- Multiple answer questions.
 
 ### Prepare for any exam with...  
 **RUSTY CARDS!**
 
-![alt text](image.png)
+![alt text](image-5.png)
 
 ## Installation
 ```cargo install rusty_cards```  
